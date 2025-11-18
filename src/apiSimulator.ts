@@ -15,7 +15,7 @@ export const fetchProductCatalog = (): Promise<product[]> => {
             { id: 2, name: "Headphones", price: 200 },
         ]);
         } else {
-        reject("Failed to fetch product catalog");
+        reject ("Failed to fetch product catalog");
         }
     }, 1000);
     });
@@ -30,7 +30,7 @@ export const fetchProductReviews = (productID:number): Promise<string[]> => {
             "Good value"
         ]);
         } else {
-        reject(`Failed to fetch review for productID: ${productID}`);
+        reject(new NetworkError(`Failed to fetch review for productID: ${productID}`));
         }
     }, 1500);
     });
@@ -54,7 +54,7 @@ export const fetchSalesReport = (): Promise<salesReport> => {
             averagePrice: 170,
         });
         } else {
-        reject("FFailed to fetch sales reportailed to fetch product catalog");
+        reject(new DataError("Failed to fetch sales report"));
         }
     }, 1000);
     });
