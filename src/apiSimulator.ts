@@ -1,4 +1,4 @@
-
+ import { NetworkError, DataError } from "./customErrors.js";
  export interface product{
     id: number;
     name:string;
@@ -30,7 +30,7 @@ export const fetchProductReviews = (productID:number): Promise<string[]> => {
             "Good value"
         ]);
         } else {
-        reject(`Failed to fetch review for productID: ${productID}`;
+        reject(`Failed to fetch review for productID: ${productID}`);
         }
     }, 1500);
     });
